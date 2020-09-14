@@ -1,0 +1,1 @@
+[![Run on Repl.it](https://repl.it/badge/github/neg4n/solver-attempt)](https://repl.it/github/neg4n/solver-attempt)
