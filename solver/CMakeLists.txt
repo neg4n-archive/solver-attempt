@@ -6,4 +6,4 @@ add_library (solver
 set(CMAKE_CXX_STANDARD 20)
 
 target_include_directories (solver PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
-target_compile_features(solver PRIVATE cxx_std_20)
+target_compile_features(solver PRIVATE cxx_std_17)
