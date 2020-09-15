@@ -7,9 +7,17 @@
 int main( ) {
   using namespace solver::internal;
 
-  Lexer lexer { "x + (15 + 15) - 20 = y" };
+  const char* code = "x + (30 * 2) / 2 - 20 = y";
+  Lexer lexer { code };
 
-  std::cout << std::setw(20)
+  std::cout << std::string(40, '-')
+            << std::endl
+            << std::setw(33)
+            << code
+            << std::endl
+            << std::string(40, '-')
+            << std::endl
+            << std::setw(20)
             << "Type" << " | " << "Inner"
             << std::endl
             << std::string(40, '-')
