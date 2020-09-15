@@ -16,7 +16,7 @@ namespace solver {
 
       Token next( ) noexcept;
       Token single( Token::Type type ) noexcept;
-      Token number( ) noexcept;
+      Token constant( ) noexcept;
 
       [[nodiscard]] char peek( ) const noexcept;
       char               get( ) noexcept;

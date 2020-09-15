@@ -11,13 +11,16 @@ namespace solver {
       switch ( peek( ) ) {
         case '+': return single( Token::Type::Plus );
         case '-': return single( Token::Type::Minus );
+        case '*': return single( Token::Type::Asterisk );
+        case '/': return single( Token::Type::Slash );
+        case '=': return single( Token::Type::EqualSign );
         case '(': return single(Token::Type::LeftParenthesis);
         case ')': return single(Token::Type::RightParenthesis);
         // @formatter:off
         case '0': case '1': case '2': case '3':
         case '4': case '5': case '6': case '7':
         case '8': case '9':
-          return number( );
+          return constant( );
         case 'a': case 'b': case 'c': case 'd':
         case 'e': case 'f': case 'g': case 'h':
         case 'i': case 'j': case 'k': case 'l':
@@ -36,7 +39,7 @@ namespace solver {
       return Token( type, begin_++, 1 );
     }
 
-    Token Lexer::number( ) noexcept {
+    Token Lexer::constant( ) noexcept {
       const char * start = begin_;
       get( );
       while ( std::isdigit( peek( ) ) )

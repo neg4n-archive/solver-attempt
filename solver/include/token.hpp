@@ -10,6 +10,9 @@ namespace solver {
         Invalid,
         Plus,
         Minus,
+        Asterisk,
+        Slash,
+        EqualSign,
         LeftParenthesis,
         RightParenthesis,
         Variable,
@@ -39,10 +42,17 @@ namespace solver {
       }
 
       [[nodiscard]] static constexpr const char * type_str( Token::Type type ) noexcept {
-        constexpr const char * const names[] = {
-          "Invalid",          "Plus",     "Minus",    "LeftParenthesis",
-          "RightParenthesis", "Variable", "Constant", "Eof"
-        };
+        constexpr const char * const names[] = { "Invalid",
+                                                 "Plus",
+                                                 "Minus",
+                                                 "Asterisk",
+                                                 "Slash",
+                                                 "EqualSign",
+                                                 "LeftParenthesis",
+                                                 "RightParenthesis",
+                                                 "Variable",
+                                                 "Constant",
+                                                 "Eof" };
         return names[ (int)type ];
       }
 
